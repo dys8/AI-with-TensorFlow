@@ -12,11 +12,11 @@ import reader
 #Initial weight scale
 init_scale = 0.1
 #Initial learning rate
-learning_rate = 1.0
+learning_rate = 0.9
 #Maximum permissible norm for the gradient (For gradient clipping -- another measure against Exploding Gradients)
 max_grad_norm = 5
 #The number of layers in our model
-num_layers = 2
+num_layers = 4
 #The total number of recurrence steps, also known as the number of layers when our RNN is "unfolded"
 num_steps = 20
 #The number of processing units (neurons) in the hidden layers
@@ -30,7 +30,7 @@ max_epoch = 15
 #At 1, we ignore the Dropout Layer wrapping.
 keep_prob = 1
 #The decay for the learning rate
-decay = 0.5
+decay = 0.3
 #The size for each batch of data
 batch_size = 60
 #The size of our vocabulary
