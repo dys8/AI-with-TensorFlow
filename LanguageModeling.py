@@ -13,21 +13,20 @@ import reader
 init_scale = 0.1
 #Initial learning rate
 learning_rate = 0.9
-#Maximum permissible norm for the gradient (For gradient clipping -- another measure against Exploding Gradients)
+#Maximum permissible norm for the gradient 
 max_grad_norm = 5
 #The number of layers in our model
 num_layers = 4
-#The total number of recurrence steps, also known as the number of layers when our RNN is "unfolded"
+#The total number of recurrence steps 
 num_steps = 20
-#The number of processing units (neurons) in the hidden layers
+#The number of processing neurons in the hidden layers
 hidden_size_l1 = 256
 hidden_size_l2 = 128
 #The maximum number of epochs trained with the initial learning rate
 max_epoch_decay_lr = 4
 #The total number of epochs in training
 max_epoch = 15
-#The probability for keeping data in the Dropout Layer (This is an optimization, but is outside our scope for this notebook!)
-#At 1, we ignore the Dropout Layer wrapping.
+#The probability for keeping data in the Dropout Layer
 keep_prob = 1
 #The decay for the learning rate
 decay = 0.3
@@ -130,7 +129,7 @@ lr = tf.Variable(0.0, trainable=False)
 # Create the gradient descent optimizer with our learning rate
 optimizer = tf.train.GradientDescentOptimizer(lr)
 
-# Get all TensorFlow variables marked as "trainable" (i.e. all of them except _lr, which we just created)
+# Get all TensorFlow variables marked as trainable (i.e. all of them except _lr, which we just created)
 tvars = tf.trainable_variables()
 tvars
 
