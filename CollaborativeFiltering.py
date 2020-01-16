@@ -5,19 +5,16 @@ Created on Sun Dec 29 01:37:05 2019
 @author: duygu
 """
 
-#Tensorflow library. Used to implement machine learning models
 import tensorflow as tf
-#Numpy contains helpful functions for efficient mathematical calculations
 import numpy as np
 #Dataframe manipulation library
 import pandas as pd
-#Graph plotting library
 import matplotlib.pyplot as plt
 
 
 #Loading in the movies dataset
 movies_df = pd.read_csv('./data/ml-latest/movies.csv', sep=',', header=None, engine='python')
-#movies_df.head()
+
 
 #Loading in the ratings dataset
 ratings_df = pd.read_csv('./data/ml-latest/ratings.csv', sep=',', header=None, engine='python')
@@ -39,7 +36,7 @@ trX = norm_user_rating_df.values
 hiddenUnits = 15
 visibleUnits =  len(user_rating_df.columns)
 vb = tf.placeholder("float", [visibleUnits]) #Number of unique movies
-hb = tf.placeholder("float", [hiddenUnits]) #Number of features we're going to learn
+hb = tf.placeholder("float", [hiddenUnits]) #Number of features to learn
 W = tf.placeholder("float", [visibleUnits, hiddenUnits])
 
 
@@ -106,7 +103,7 @@ mock_user_id = 186
 
 #Selecting the input user
 inputUser = trX[mock_user_id-1].reshape(1, -1)
-inputUser[0:5]
+#print(inputUser[0:5])
 
 #Feeding in the user and reconstructing the input
 hh0 = tf.nn.sigmoid(tf.matmul(v0, W) + hb)
