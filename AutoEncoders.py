@@ -74,7 +74,7 @@ init = tf.global_variables_initializer()
 
 
 # Launch the graph
-# Using InteractiveSession (more convenient while using Notebooks)
+
 sess = tf.InteractiveSession()
 sess.run(init)
 
@@ -99,8 +99,8 @@ encode_decode = sess.run(
 
 
 # Compare original images with their reconstructions
-#f, a = plt.subplots(2, 10, figsize=(10, 2))
-#choose a sample from the test
+
+#A sample from the test
 k=4
 plt.imshow(np.reshape(mnist.test.images[k], (28, 28)))
 plt.show()
