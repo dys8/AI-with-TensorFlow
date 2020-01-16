@@ -16,11 +16,11 @@ import matplotlib.pyplot as plt
 
 
 #Loading in the movies dataset
-movies_df = pd.read_csv('./data/ml-latest/movies.dat', sep='::', header=None, engine='python')
+movies_df = pd.read_csv('./data/ml-latest/movies.csv', sep=',', header=None, engine='python')
 #movies_df.head()
 
 #Loading in the ratings dataset
-ratings_df = pd.read_csv('./data/ml-latest/ratings.dat', sep='::', header=None, engine='python')
+ratings_df = pd.read_csv('./data/ml-latest/ratings.csv', sep=',', header=None, engine='python')
 
 
 movies_df.columns = ['MovieID', 'Title', 'Genres']
