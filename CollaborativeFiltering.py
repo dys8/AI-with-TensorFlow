@@ -16,11 +16,11 @@ import matplotlib.pyplot as plt
 
 
 #Loading in the movies dataset
-movies_df = pd.read_csv('./data/ml-1m/movies.dat', sep='::', header=None, engine='python')
+movies_df = pd.read_csv('./data/ml-latest/movies.dat', sep='::', header=None, engine='python')
 #movies_df.head()
 
 #Loading in the ratings dataset
-ratings_df = pd.read_csv('./data/ml-1m/ratings.dat', sep='::', header=None, engine='python')
+ratings_df = pd.read_csv('./data/ml-latest/ratings.dat', sep='::', header=None, engine='python')
 
 
 movies_df.columns = ['MovieID', 'Title', 'Genres']
@@ -36,7 +36,7 @@ norm_user_rating_df = user_rating_df.fillna(0) / 5.0
 trX = norm_user_rating_df.values
 
 
-hiddenUnits = 20
+hiddenUnits = 15
 visibleUnits =  len(user_rating_df.columns)
 vb = tf.placeholder("float", [visibleUnits]) #Number of unique movies
 hb = tf.placeholder("float", [hiddenUnits]) #Number of features we're going to learn
@@ -102,7 +102,7 @@ plt.ylabel('Error')
 plt.xlabel('Epoch')
 plt.show()
 
-mock_user_id = 215
+mock_user_id = 186
 
 #Selecting the input user
 inputUser = trX[mock_user_id-1].reshape(1, -1)
